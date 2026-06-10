@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <script>document.documentElement.className+=' js';</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 <script>
-/* 依瀏覽器語系自動切換版本；手動點選後會記住偏好，不再自動跳轉 */
+/* Auto-switch version by browser locale; a manual choice is remembered and stops auto-redirect */
 (function(){
   try{
     var pages={tc:'index.html',sc:'index_sc.html',en:'index_en.html'};
@@ -37,8 +37,8 @@
   }catch(e){}
 })();
 </script>
-<title>wayio｜室內定位 AI 引擎 omcor（官網雛形 v1 深色）</title>
-<meta name="description" content="wayio omcor：純 AI 室內定位引擎，免專屬硬體，沿用既有 Wi-Fi/5G/藍牙/UWB 訊號即可上線。本頁為雛形，所有客戶名稱均已匿名化呈現。" />
+<title>wayio｜omcor, the AI indoor positioning engine (prototype v1, dark)</title>
+<meta name="description" content="wayio omcor: a pure-software AI indoor positioning engine. No dedicated hardware. It runs on a venue's existing Wi-Fi/5G/Bluetooth/UWB signals and goes live the same day. This page is a prototype; all client names are anonymized." />
 <style>
   :root{
     --bg:#0b1020; --panel:#121a33; --panel-2:#0f1730;
@@ -50,7 +50,7 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;font-family:"Segoe UI","PingFang TC","Noto Sans TC",system-ui,-apple-system,sans-serif;
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
     background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -171,20 +171,19 @@
 <header>
   <div class="wrap">
     <nav>
-      <a class="logo" href="#top"><span class="dot"></span> wayio<span style="color:var(--muted);font-weight:400">｜雛形 v1 深色</span></a>
+      <a class="logo" href="#top"><span class="dot"></span> wayio<span style="color:var(--muted);font-weight:400">｜prototype v1 dark</span></a>
       <div class="nav-links">
-        <a href="#brand">品牌</a>
-        <a href="#problem">問題</a>
-        <a href="#solution">運作方式</a>
-        <a href="#market">市場機會</a>
-        <a href="#cases">案例</a>
-        <a href="#faq">常見問題</a>
+        <a href="#brand">Brand</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">How it works</a>
+        <a href="#market">Market</a>
+        <a href="#cases">Cases</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div style="display:flex;gap:8px;align-items:center">
-        <a class="swatch" href="index.html" style="border-color:var(--brand);color:var(--text)">繁</a>
+        <a class="swatch" href="index.html">繁</a>
         <a class="swatch" href="index_sc.html">简</a>
-        <a class="swatch" href="index_en.html">EN</a>
-        <a class="swatch" href="index_v2_light.html">淺色 →</a>
+        <a class="swatch" href="index_en.html" style="border-color:var(--brand);color:var(--text)">EN</a>
       </div>
     </nav>
   </div>
@@ -197,17 +196,17 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="reveal">
-          <div class="tag">純 AI 室內定位 ‧ 免專屬硬體</div>
-          <h1><span class="nb">室內，也能像 GPS 一樣</span><br><span class="nb">知道你在幾樓、哪個位置</span></h1>
-          <p class="lead">人有八成時間待在室內，但 GPS 一進室內就失靈。<b style="color:var(--text)">wayio</b> 的核心產品 <b style="color:var(--text)">omcor</b> 是一套純軟體的室內定位引擎，直接沿用場域既有的網路訊號，不必另外佈建硬體，當天就能上線。</p>
+          <div class="tag">Pure-AI indoor positioning ‧ No dedicated hardware</div>
+          <h1><span class="nb">Indoors, know your position</span><br><span class="nb">and floor, just like GPS</span></h1>
+          <p class="lead">People spend about 80% of their time indoors, yet GPS stops working the moment you step inside. <b style="color:var(--text)">wayio</b>'s core product, <b style="color:var(--text)">omcor</b>, is a pure-software indoor positioning engine. It runs on the network signals a venue already has, needs no dedicated hardware, and goes live the same day.</p>
           <div class="cta">
-            <a class="btn" href="#contact">預約場域評估</a>
-            <a class="btn ghost" href="#value">看商業價值</a>
+            <a class="btn" href="#contact">Book a site assessment</a>
+            <a class="btn ghost" href="#value">See the business case</a>
           </div>
         </div>
         <!-- signal-flow diagram -->
         <div class="diagram reveal">
-          <svg viewBox="0 0 520 360" role="img" aria-label="訊號流向 AI 核心並輸出位置與樓層的示意圖">
+          <svg viewBox="0 0 520 360" role="img" aria-label="Diagram showing signals flowing into the AI core and outputting position and floor">
             <defs>
               <radialGradient id="coreg" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#9fc0ff"/><stop offset="60%" stop-color="#5b8cff"/><stop offset="100%" stop-color="#34d6c4"/>
@@ -229,10 +228,10 @@
             <path class="flow dash" d="M270,200 C330,240 360,250 420,252"/>
             <!-- signal sources -->
             <g font-family="Segoe UI, sans-serif" text-anchor="middle">
-              <rect class="src" x="20" y="44"  width="90" height="32" rx="9"/><text class="srcT" x="65" y="65">📱 手機</text>
+              <rect class="src" x="20" y="44"  width="90" height="32" rx="9"/><text class="srcT" x="65" y="65">📱 Phone</text>
               <rect class="src" x="20" y="104" width="90" height="32" rx="9"/><text class="srcT" x="65" y="125">📶 Wi-Fi</text>
               <rect class="src" x="20" y="164" width="90" height="32" rx="9"/><text class="srcT" x="65" y="185">🗼 5G</text>
-              <rect class="src" x="20" y="224" width="90" height="32" rx="9"/><text class="srcT" x="65" y="245">🔵 藍牙</text>
+              <rect class="src" x="20" y="224" width="90" height="32" rx="9"/><text class="srcT" x="65" y="245">🔵 BLE</text>
               <rect class="src" x="20" y="284" width="90" height="32" rx="9"/><text class="srcT" x="65" y="305">📡 UWB</text>
             </g>
             <!-- AI core -->
@@ -243,17 +242,17 @@
             </g>
             <!-- outputs -->
             <g text-anchor="middle">
-              <rect class="outBox" x="420" y="88"  width="92" height="40" rx="10"/><text class="outT" x="466" y="113">經緯度</text>
-              <rect class="outBox" x="420" y="232" width="92" height="40" rx="10"/><text class="outT" x="466" y="257">樓層</text>
+              <rect class="outBox" x="420" y="88"  width="92" height="40" rx="10"/><text class="outT" x="466" y="113">Lat/Lng</text>
+              <rect class="outBox" x="420" y="232" width="92" height="40" rx="10"/><text class="outT" x="466" y="257">Floor</text>
             </g>
           </svg>
         </div>
       </div>
       <div class="stats">
-        <div class="stat reveal"><b><span class="count" data-to="3" data-suffix=" m" data-prefix="2–">2–3 m</span></b><span>定位精度</span></div>
-        <div class="stat reveal"><b><span class="count" data-to="3300" data-suffix=" m²／日">3,300 m²／日</span></b><span>部署速度</span></div>
-        <div class="stat reveal"><b>當天</b><span>即可上線</span></div>
-        <div class="stat reveal"><b>零</b><span>專屬硬體成本</span></div>
+        <div class="stat reveal"><b><span class="count" data-to="3" data-suffix=" m" data-prefix="2–">2–3 m</span></b><span>Positioning accuracy</span></div>
+        <div class="stat reveal"><b><span class="count" data-to="3300" data-suffix=" m²/day">3,300 m²/day</span></b><span>Deployment speed</span></div>
+        <div class="stat reveal"><b>Same day</b><span>Live and usable</span></div>
+        <div class="stat reveal"><b>Zero</b><span>Dedicated hardware cost</span></div>
       </div>
     </div>
   </section>
@@ -261,11 +260,11 @@
   <!-- TRUST STRIP -->
   <div class="trust">
     <div class="wrap reveal">
-      <span class="lbl">已在這些場域實際運行（客戶匿名）</span>
-      <span class="logo-pill">✈️ 國際機場</span>
-      <span class="logo-pill">🏥 大型醫院</span>
-      <span class="logo-pill">🏭 電子製造園區</span>
-      <span class="logo-pill">🎓 大學校園</span>
+      <span class="lbl">ALREADY RUNNING IN THESE VENUES (CLIENTS ANONYMIZED)</span>
+      <span class="logo-pill">✈️ International airport</span>
+      <span class="logo-pill">🏥 Large hospital</span>
+      <span class="logo-pill">🏭 Electronics manufacturing park</span>
+      <span class="logo-pill">🎓 University campus</span>
     </div>
   </div>
 
@@ -273,12 +272,12 @@
   <section id="brand">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">wayio × omcor</div>
-      <h2>我們是 wayio，產品是 omcor</h2>
-      <p class="sub"><b style="color:var(--text)">wayio</b> 是一家專注「室內定位」的 AI 新創；核心產品 <b style="color:var(--text)">omcor</b> 是一套純軟體的室內定位引擎，讓室內也能像戶外的 GPS 一樣，即時知道「在幾樓、在哪個位置」。</p></div>
+      <h2>We are wayio. The product is omcor.</h2>
+      <p class="sub"><b style="color:var(--text)">wayio</b> is an AI startup focused on one thing: indoor positioning. Our core product, <b style="color:var(--text)">omcor</b>, is a pure-software engine that lets you know "which floor, which spot" indoors, the same way GPS does outdoors.</p></div>
       <div class="grid g-3" style="margin-top:34px">
-        <div class="card reveal"><div class="ico">🏢</div><h3>wayio（品牌）</h3><p>聚焦室內定位這一個核心難題的 AI 團隊，以單一引擎跨場域落地，目標成為室內定位的基礎設施。</p></div>
-        <div class="card reveal"><div class="ico">🧭</div><h3>omcor（產品）</h3><p>純 AI 室內定位引擎：沿用場域既有網路訊號，免佈建專屬硬體，直接輸出位置與樓層。</p></div>
-        <div class="card reveal"><div class="ico">🎯</div><h3>一句話定位</h3><p>「室內版的 GPS」。把原本昂貴又緩慢的室內定位，變成一套軟體當天就能上線的服務。</p></div>
+        <div class="card reveal"><div class="ico">🏢</div><h3>wayio (the brand)</h3><p>An AI team focused on the single hard problem of indoor positioning, taking one engine across many venues, with the goal of becoming the infrastructure layer for indoor location.</p></div>
+        <div class="card reveal"><div class="ico">🧭</div><h3>omcor (the product)</h3><p>A pure-AI indoor positioning engine: it runs on a venue's existing network signals, needs no dedicated hardware, and outputs position and floor directly.</p></div>
+        <div class="card reveal"><div class="ico">🎯</div><h3>In one line</h3><p>"GPS for indoors." It turns indoor positioning, once expensive and slow, into a software service that goes live the same day.</p></div>
       </div>
     </div>
   </section>
@@ -287,13 +286,13 @@
   <section id="problem">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">The Problem</div>
-      <h2>室外有 GPS，室內卻是一片盲區</h2>
-      <p class="sub">過去的室內定位方案，要嘛太貴、太慢、太脆弱，讓市場一直無法規模化。</p></div>
+      <h2>Outdoors has GPS. Indoors is a blind spot.</h2>
+      <p class="sub">Until now, indoor positioning has been too expensive, too slow, or too fragile, which kept the market from ever scaling.</p></div>
       <div class="grid g-4" style="margin-top:34px">
-        <div class="card reveal"><div class="ico">💰</div><h3>硬體成本高</h3><p>UWB、藍牙信標、攝影機等，單一場域動輒百萬級的硬體佈建。</p></div>
-        <div class="card reveal"><div class="ico">🐌</div><h3>部署週期長</h3><p>數月施工、校正與調校，過程往往需要停機配合。</p></div>
-        <div class="card reveal"><div class="ico">🧱</div><h3>環境脆弱</h3><p>金屬、人潮、牆面、燈光，工廠與醫院場域容易讓訊號失準。</p></div>
-        <div class="card reveal"><div class="ico">🔧</div><h3>維護負擔重</h3><p>每次裝修就要重建，電池與設備需要持續巡檢。</p></div>
+        <div class="card reveal"><div class="ico">💰</div><h3>High hardware cost</h3><p>UWB, Bluetooth beacons, cameras and the like often mean a million-dollar hardware build for a single venue.</p></div>
+        <div class="card reveal"><div class="ico">🐌</div><h3>Long deployment</h3><p>Months of installation, calibration and tuning, often requiring downtime to coordinate.</p></div>
+        <div class="card reveal"><div class="ico">🧱</div><h3>Fragile in the field</h3><p>Metal, crowds, walls and lighting easily throw signals off in factories and hospitals.</p></div>
+        <div class="card reveal"><div class="ico">🔧</div><h3>Heavy maintenance</h3><p>Every renovation means a rebuild, and batteries and devices need constant inspection.</p></div>
       </div>
     </div>
   </section>
@@ -302,17 +301,17 @@
   <section id="solution" style="background:var(--panel-2)">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">How it works</div>
-      <h2>一顆 AI 核心，沿用既有訊號</h2>
-      <p class="sub">omcor 用 AI 模型整合場域裡既有的各種訊號，直接算出位置與樓層，不必為了定位再拉一整套硬體。多數場館本來就有訊號覆蓋，只要在少數收訊較弱的角落補強既有網路就好。</p>
+      <h2>One AI core, built on the signals you already have</h2>
+      <p class="sub">omcor uses AI models to fuse the signals already present in your venue and compute position and floor directly, so there's no separate hardware to roll out just for positioning. Most venues already have coverage; you only need to top up the existing network in the few corners where reception is weak.</p>
       <div class="pill-row">
-        <span class="pill">📱 手機</span><span class="pill">📶 Wi-Fi</span><span class="pill">🗼 5G</span>
-        <span class="pill">🔵 藍牙</span><span class="pill">📡 UWB</span><span class="pill">→ 經緯度 ＋ 樓層</span>
+        <span class="pill">📱 Phone</span><span class="pill">📶 Wi-Fi</span><span class="pill">🗼 5G</span>
+        <span class="pill">🔵 Bluetooth</span><span class="pill">📡 UWB</span><span class="pill">→ Lat/Lng + Floor</span>
       </div></div>
       <div class="grid g-4" style="margin-top:34px">
-        <div class="card reveal"><h3 style="color:var(--brand-2)">2–3 m</h3><p>定位精度</p></div>
-        <div class="card reveal"><h3 style="color:var(--brand-2)">3,300 m²／日</h3><p>部署速度</p></div>
-        <div class="card reveal"><h3 style="color:var(--brand-2)">當天</h3><p>上線可用</p></div>
-        <div class="card reveal"><h3 style="color:var(--brand-2)">零</h3><p>專屬定位硬體</p></div>
+        <div class="card reveal"><h3 style="color:var(--brand-2)">2–3 m</h3><p>Positioning accuracy</p></div>
+        <div class="card reveal"><h3 style="color:var(--brand-2)">3,300 m²/day</h3><p>Deployment speed</p></div>
+        <div class="card reveal"><h3 style="color:var(--brand-2)">Same day</h3><p>Live and usable</p></div>
+        <div class="card reveal"><h3 style="color:var(--brand-2)">Zero</h3><p>Dedicated positioning hardware</p></div>
       </div>
     </div>
   </section>
@@ -321,12 +320,12 @@
   <section id="market">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">Market ‧ Why now</div>
-      <h2>為什麼是現在</h2>
-      <p class="sub">人有大約八成時間待在室內，室內定位卻一直被硬體成本和施工門檻擋住。AI 讓「不靠專屬硬體也能定位」成真，把過去動輒百萬、要做好幾個月的工程，變成一套軟體服務，市場這才真正打得開。</p></div>
+      <h2>Why now</h2>
+      <p class="sub">People spend roughly 80% of their time indoors, yet indoor positioning has long been held back by hardware cost and installation barriers. AI makes positioning without dedicated hardware real, turning what used to be a months-long, million-dollar build into a software service, which is what finally opens up the market.</p></div>
       <div class="grid g-3" style="margin-top:34px">
-        <div class="card reveal"><div class="ico">📈</div><h3>需求遍布各行業</h3><p>機場、醫院、製造、零售、校園，只要有人和物在室內移動，就有定位需求，橫跨許多產業。</p></div>
-        <div class="card reveal"><div class="ico">⚙️</div><h3>純軟體 ＝ 可規模化</h3><p>不綁專屬硬體，同一套引擎跨場域複製；邊際成本低、導入快，具備規模化與重複營收的結構。</p></div>
-        <div class="card reveal"><div class="ico">🚀</div><h3>時機成熟</h3><p>場域既有的 Wi-Fi／5G／藍牙覆蓋已普及、AI 模型成熟，正是用軟體取代硬體佈建的拐點。</p></div>
+        <div class="card reveal"><div class="ico">📈</div><h3>Demand across every industry</h3><p>Airports, hospitals, manufacturing, retail, campuses — wherever people and assets move indoors, there's a need for positioning, spanning many industries.</p></div>
+        <div class="card reveal"><div class="ico">⚙️</div><h3>Pure software = scalable</h3><p>No dedicated hardware to lock into; the same engine replicates across venues. Low marginal cost and fast onboarding give it the structure for scale and recurring revenue.</p></div>
+        <div class="card reveal"><div class="ico">🚀</div><h3>The timing is right</h3><p>Existing Wi-Fi/5G/Bluetooth coverage is now widespread and AI models are mature — the inflection point for replacing hardware rollouts with software.</p></div>
       </div>
     </div>
   </section>
@@ -335,13 +334,13 @@
   <section id="verticals">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">Verticals</div>
-      <h2>一套引擎，跨場域重複落地</h2>
-      <p class="sub">同一個 AI 核心，已在四類場域實際運行；多數新場域可在數天內上線。</p></div>
+      <h2>One engine, repeatable across venues</h2>
+      <p class="sub">The same AI core already runs in four kinds of venues, and most new sites can go live within days.</p></div>
       <div class="grid g-4" style="margin-top:34px">
-        <div class="card reveal"><div class="ico">✈️</div><h3>國際機場</h3><p>推車與輪椅追蹤、地勤巡檢，提升調度效率與旅客動線體驗。</p></div>
-        <div class="card reveal"><div class="ico">🏥</div><h3>大型醫院</h3><p>病患導引、設備管理、安全監看，降低合規與走失風險。</p></div>
-        <div class="card reveal"><div class="ico">🏭</div><h3>電子製造園區</h3><p>人員與資產定位，顯著縮短現場找人找物的時間。</p></div>
-        <div class="card reveal"><div class="ico">🎓</div><h3>大學與企業園區</h3><p>校園與園區尋路、訪客管理，提供自助式導覽與可稽核軌跡。</p></div>
+        <div class="card reveal"><div class="ico">✈️</div><h3>International airports</h3><p>Cart and wheelchair tracking, ground-crew inspections — improving dispatch efficiency and the passenger journey.</p></div>
+        <div class="card reveal"><div class="ico">🏥</div><h3>Large hospitals</h3><p>Patient wayfinding, equipment management and safety monitoring, lowering compliance and wandering risks.</p></div>
+        <div class="card reveal"><div class="ico">🏭</div><h3>Electronics manufacturing parks</h3><p>People and asset positioning that sharply cuts the time spent locating staff and items on site.</p></div>
+        <div class="card reveal"><div class="ico">🎓</div><h3>Universities and corporate campuses</h3><p>Campus and park wayfinding, visitor management, self-service guidance and auditable trails.</p></div>
       </div>
     </div>
   </section>
@@ -350,32 +349,32 @@
   <section id="cases" style="background:var(--panel-2)">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">Case Studies</div>
-      <h2>精選案例（匿名）</h2>
-      <p class="sub">以下為實際導入場域的示意呈現，依規格書要求，客戶名稱一律隱藏並以代號呈現；部分數字為佔位示意，正式版以可公開實績替換。</p></div>
+      <h2>Selected cases (anonymized)</h2>
+      <p class="sub">The following are illustrative representations of real deployments. As required by the spec, all customer names are hidden and shown by code; some figures are placeholders, to be replaced with publishable results in the final version.</p></div>
       <div class="grid g-3" style="margin-top:34px">
         <div class="card case reveal">
-          <span class="tag">交通樞紐</span>
-          <h3>案例 A｜國際機場旅客動線</h3>
-          <div class="meta">場域：東南亞某大型國際機場，日均數十萬旅客</div>
-          <p>以手機與既有網路定位，免佈建專屬硬體即提供即時推車與設施導引。</p>
-          <div class="res"><div><b>3 天內</b><span>多數場域上線</span></div><div><b>—</b><span>覆蓋面積</span></div></div>
+          <span class="tag">Transport hub</span>
+          <h3>Case A | Airport passenger flow</h3>
+          <div class="meta">Venue: a major international airport in Southeast Asia, hundreds of thousands of passengers daily</div>
+          <p>Positioning via phones and existing networks, delivering real-time cart and facility guidance with no dedicated hardware.</p>
+          <div class="res"><div><b>Within 3 days</b><span>most venues live</span></div><div><b>—</b><span>coverage area</span></div></div>
         </div>
         <div class="card case reveal">
-          <span class="tag">智慧校園</span>
-          <h3>案例 B｜大學校園智慧服務</h3>
-          <div class="meta">場域：北部某國立大學校園</div>
-          <p>提供校園尋路與服務整合，完成上線部署並可由外部位址驗證。</p>
-          <div class="res"><div><b>當天</b><span>上線可用</span></div><div><b>—</b><span>服務模組數</span></div></div>
+          <span class="tag">Smart campus</span>
+          <h3>Case B | University campus smart services</h3>
+          <div class="meta">Venue: a national university campus in northern Taiwan</div>
+          <p>Campus wayfinding and service integration, deployed to production and verifiable from an external address.</p>
+          <div class="res"><div><b>Same day</b><span>live and usable</span></div><div><b>—</b><span>service modules</span></div></div>
         </div>
         <div class="card case reveal">
-          <span class="tag">電子製造</span>
-          <h3>案例 C｜製造園區人員與資產定位</h3>
-          <div class="meta">場域：某電子製造園區，可複製至第二廠區</div>
-          <p>顯著縮短現場找人找物時間，客戶已規劃複製至下一個廠區。</p>
-          <div class="res"><div><b>—</b><span>找人找物時間縮短</span></div><div><b>第二廠區</b><span>擴點中</span></div></div>
+          <span class="tag">Electronics manufacturing</span>
+          <h3>Case C | Manufacturing park people and asset positioning</h3>
+          <div class="meta">Venue: an electronics manufacturing park, replicable to a second site</div>
+          <p>Markedly shorter time to locate staff and items on site; the customer has planned a rollout to the next plant.</p>
+          <div class="res"><div><b>—</b><span>locating time reduced</span></div><div><b>Second plant</b><span>expanding</span></div></div>
         </div>
       </div>
-      <div class="note reveal">⚠️ 雛形提醒：依規格書要求，本頁所有客戶名稱一律匿名化，以「案例 A／B／C」呈現；含「—」之數字為佔位，正式版需替換為實際可公開實績，並避免揭露非公開的財務或客戶資訊。</div>
+      <div class="note reveal">⚠️ Prototype note: per the spec, all customer names on this page are anonymized as "Case A/B/C". Figures marked "—" are placeholders, to be replaced with real publishable results in the final version, while avoiding disclosure of non-public financial or customer information.</div>
     </div>
   </section>
 
@@ -383,20 +382,20 @@
   <section id="value">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">Why omcor</div>
-      <h2>對客戶，也對投資人</h2>
-      <p class="sub">同一個產品，從兩種視角看都成立。</p></div>
+      <h2>For customers, and for investors</h2>
+      <p class="sub">One product that holds up from both points of view.</p></div>
       <div class="grid g-2" style="margin-top:34px">
-        <div class="card reveal"><div class="tag">給潛在客戶</div><h3 style="margin:0 0 10px">更省、更快、風險更低</h3>
-          <p style="margin:.4em 0">‧ 免佈建專屬硬體，省下百萬級成本</p>
-          <p style="margin:.4em 0">‧ 多數場域當天～數天即可上線</p>
-          <p style="margin:.4em 0">‧ 沿用既有網路，裝修後不必整套重建</p>
-          <p style="margin:.4em 0">‧ 導引、資產追蹤、安全監看一套整合</p>
+        <div class="card reveal"><div class="tag">For prospective customers</div><h3 style="margin:0 0 10px">Cheaper, faster, lower risk</h3>
+          <p style="margin:.4em 0">‧ No dedicated hardware, saving million-dollar costs</p>
+          <p style="margin:.4em 0">‧ Most venues go live the same day to within days</p>
+          <p style="margin:.4em 0">‧ Reuses existing networks, no full rebuild after renovations</p>
+          <p style="margin:.4em 0">‧ Guidance, asset tracking and safety monitoring in one</p>
         </div>
-        <div class="card reveal"><div class="tag">給投資人</div><h3 style="margin:0 0 10px">可規模化的軟體引擎</h3>
-          <p style="margin:.4em 0">‧ 純軟體、跨場域可複製，邊際成本低</p>
-          <p style="margin:.4em 0">‧ 需求橫跨機場／醫院／製造／校園多產業</p>
-          <p style="margin:.4em 0">‧ 已於多類場域實際運行（案例 A／B／C）</p>
-          <p style="margin:.4em 0">‧ 以授權／訂閱為主的重複營收模型</p>
+        <div class="card reveal"><div class="tag">For investors</div><h3 style="margin:0 0 10px">A scalable software engine</h3>
+          <p style="margin:.4em 0">‧ Pure software, replicable across venues, low marginal cost</p>
+          <p style="margin:.4em 0">‧ Demand spans airports / hospitals / manufacturing / campuses</p>
+          <p style="margin:.4em 0">‧ Already running in multiple venue types (Cases A/B/C)</p>
+          <p style="margin:.4em 0">‧ Recurring-revenue model led by licensing / subscription</p>
         </div>
       </div>
     </div>
@@ -406,13 +405,13 @@
   <section id="how">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">Process</div>
-      <h2>導入流程</h2>
-      <p class="sub">從場域評估到上線維運，四個階段透明可追蹤。</p></div>
+      <h2>How we onboard</h2>
+      <p class="sub">From venue assessment to live operations, four transparent and trackable stages.</p></div>
       <div class="steps reveal" style="margin-top:30px">
-        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">場域評估</h3><p style="color:var(--muted);margin:0">盤點現有 Wi-Fi／5G／藍牙／UWB 覆蓋，界定需補強的訊號稀疏點。</p></div></div>
-        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">模型佈署</h3><p style="color:var(--muted);margin:0">載入 omcor AI 核心並校準，多數場域當天即可產生位置輸出。</p></div></div>
-        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">應用整合</h3><p style="color:var(--muted);margin:0">串接導引、資產追蹤或監看應用，提供操作文件與權限管理。</p></div></div>
-        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">維運與擴點</h3><p style="color:var(--muted);margin:0">持續監控與迭代，並以同一引擎複製到下一個場域或廠區。</p></div></div>
+        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">Venue assessment</h3><p style="color:var(--muted);margin:0">Survey existing Wi-Fi/5G/Bluetooth/UWB coverage and identify the sparse spots that need reinforcement.</p></div></div>
+        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">Model deployment</h3><p style="color:var(--muted);margin:0">Load and calibrate the omcor AI core; most venues produce position output the same day.</p></div></div>
+        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">Application integration</h3><p style="color:var(--muted);margin:0">Connect guidance, asset-tracking or monitoring apps, with operation docs and access management.</p></div></div>
+        <div class="step"><div class="n"></div><div><h3 style="margin:.2em 0">Operations and expansion</h3><p style="color:var(--muted);margin:0">Continuous monitoring and iteration, replicating the same engine to the next venue or plant.</p></div></div>
       </div>
     </div>
   </section>
@@ -421,13 +420,13 @@
   <section id="faq">
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">FAQ</div>
-      <h2>常見問題</h2>
-      <p class="sub">關於 omcor 室內定位最常被問到的幾點。</p></div>
+      <h2>FAQ</h2>
+      <p class="sub">The questions we hear most about omcor indoor positioning.</p></div>
       <div class="faq reveal">
-        <details class="qa"><summary>需要在場域佈建專屬定位硬體嗎？</summary><p>不需要。omcor 沿用場域既有的 Wi-Fi／5G／藍牙／UWB 訊號，多數場館本就有覆蓋，僅需在少數訊號稀疏處補強既有網路。</p></details>
-        <details class="qa"><summary>定位精度大概多少？</summary><p>一般可達 2–3 公尺，並能判讀所在樓層，輸出經緯度與樓層資訊。</p></details>
-        <details class="qa"><summary>導入要多久才能上線？</summary><p>部署速度約 3,300 m²／日，多數場域可於數天內、甚至當天產生可用的位置輸出。</p></details>
-        <details class="qa"><summary>適合哪些場域？</summary><p>已在國際機場、大型醫院、電子製造園區與大學／企業園區實際運行，同一套引擎可跨場域快速複製。</p></details>
+        <details class="qa"><summary>Do we need to install dedicated positioning hardware?</summary><p>No. omcor reuses your venue's existing Wi-Fi/5G/Bluetooth/UWB signals. Most venues already have coverage; you only top up the existing network in the few sparse spots.</p></details>
+        <details class="qa"><summary>What's the positioning accuracy?</summary><p>Typically 2–3 meters, with floor detection, outputting latitude, longitude and floor information.</p></details>
+        <details class="qa"><summary>How long until it goes live?</summary><p>Deployment runs about 3,300 m²/day, and most venues produce usable position output within days, or even the same day.</p></details>
+        <details class="qa"><summary>Which venues is it suited for?</summary><p>It already runs in international airports, large hospitals, electronics manufacturing parks and university/corporate campuses, with one engine replicating quickly across venues.</p></details>
       </div>
     </div>
   </section>
@@ -438,15 +437,15 @@
       <div class="grid g-2 reveal" style="align-items:center">
         <div>
           <div class="eyebrow">About</div>
-          <h2>關於 wayio</h2>
-          <p class="sub">wayio 專注於室內定位的核心難題：讓室內也能像戶外一樣被精準定位。我們的 omcor 引擎以單一 AI 核心，沿用場域既有網路訊號運作，免佈建專屬硬體即可跨機場、醫院、製造園區與校園快速落地。</p>
+          <h2>About wayio</h2>
+          <p class="sub">wayio focuses on the core challenge of indoor positioning: making indoors as precisely locatable as outdoors. Our omcor engine runs on a single AI core that reuses your venue's existing network signals, deploying quickly across airports, hospitals, manufacturing parks and campuses with no dedicated hardware.</p>
         </div>
         <div class="card">
-          <h3>我們擅長</h3>
-          <p style="margin:.4em 0">‧ 純 AI 室內定位，免專屬硬體</p>
-          <p style="margin:.4em 0">‧ 沿用 Wi-Fi／5G／藍牙／UWB 既有訊號</p>
-          <p style="margin:.4em 0">‧ 當天上線、跨場域快速複製</p>
-          <p style="margin:.4em 0">‧ 導引、資產追蹤與安全監看整合</p>
+          <h3>What we do best</h3>
+          <p style="margin:.4em 0">‧ Pure-AI indoor positioning, no dedicated hardware</p>
+          <p style="margin:.4em 0">‧ Reuses existing Wi-Fi/5G/Bluetooth/UWB signals</p>
+          <p style="margin:.4em 0">‧ Same-day go-live, fast replication across venues</p>
+          <p style="margin:.4em 0">‧ Guidance, asset tracking and safety monitoring in one</p>
         </div>
       </div>
     </div>
@@ -457,14 +456,14 @@
     <div class="wrap">
       <div class="contact reveal">
         <div class="eyebrow">Contact</div>
-        <h2>想知道你的場域能不能用 omcor？</h2>
-        <p class="sub" style="margin:0 auto">留下需求，我們會盡快與你聯繫評估。（雛形表單，送出僅示意，未串接後端）</p>
+        <h2>Want to know if omcor fits your venue?</h2>
+        <p class="sub" style="margin:0 auto">Leave your details and we'll reach out to assess. (Prototype form — submission is illustrative only, not connected to a backend.)</p>
         <form onsubmit="event.preventDefault();this.reset();document.getElementById('ok').style.display='block';">
-          <input type="text" placeholder="你的名字" required />
+          <input type="text" placeholder="Your name" required />
           <input type="email" placeholder="Email" required />
-          <textarea rows="4" placeholder="想了解的場域類型或需求（機場／醫院／園區／校園……）"></textarea>
-          <button class="btn" type="submit">送出</button>
-          <div id="ok" style="display:none;color:var(--brand-2)">已收到（示意）。正式版請接上表單服務或公司信箱。</div>
+          <textarea rows="4" placeholder="The venue type or need you'd like to explore (airport / hospital / park / campus…)"></textarea>
+          <button class="btn" type="submit">Submit</button>
+          <div id="ok" style="display:none;color:var(--brand-2)">Received (illustrative). The production version should connect a form service or company email.</div>
         </form>
       </div>
     </div>
@@ -473,8 +472,8 @@
 
 <footer>
   <div class="wrap foot">
-    <div>© <span id="yr"></span> wayio（雛形）．客戶名稱均匿名化呈現。</div>
-    <div>品牌　問題　運作方式　市場機會　案例　常見問題</div>
+    <div>© <span id="yr"></span> wayio (prototype). All customer names shown anonymized.</div>
+    <div>Brand　Problem　How it works　Market　Cases　FAQ</div>
   </div>
 </footer>
 

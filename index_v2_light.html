@@ -5,6 +5,38 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
+<script>
+/* 依瀏覽器語系自動切換版本；手動點選後會記住偏好，不再自動跳轉 */
+(function(){
+  try{
+    var pages={tc:'index.html',sc:'index_sc.html',en:'index_en.html'};
+    var file=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+    var current=file==='index_sc.html'?'sc':(file==='index_en.html'?'en':'tc');
+    var saved=localStorage.getItem('omcor_lang');
+    var target=saved;
+    if(!target){
+      var langs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+      target='en';
+      for(var i=0;i<langs.length;i++){
+        var l=langs[i].toLowerCase();
+        if(l.indexOf('zh')===0){
+          target=(l.indexOf('cn')>-1||l.indexOf('hans')>-1||l.indexOf('sg')>-1)?'sc':'tc';
+          break;
+        }
+        if(l.indexOf('en')===0){target='en';break;}
+      }
+    }
+    if(target&&target!==current){location.replace(pages[target]);return;}
+    document.addEventListener('click',function(e){
+      var a=e.target&&e.target.closest&&e.target.closest('a.swatch');
+      if(!a)return;
+      var h=(a.getAttribute('href')||'').toLowerCase();
+      var lang=h.indexOf('index_sc')>-1?'sc':(h.indexOf('index_en')>-1?'en':'tc');
+      try{localStorage.setItem('omcor_lang',lang);}catch(_){}
+    });
+  }catch(e){}
+})();
+</script>
 <title>wayio｜室內定位 AI 引擎 omcor（官網雛形 v2 淺色）</title>
 <meta name="description" content="wayio omcor：純 AI 室內定位引擎，免專屬硬體，沿用既有 Wi-Fi/5G/藍牙/UWB 訊號即可上線。本頁為雛形，所有客戶名稱均已匿名化呈現。" />
 <style>
@@ -148,7 +180,12 @@
         <a href="#cases">案例</a>
         <a href="#faq">常見問題</a>
       </div>
-      <a class="swatch" href="index.html">切換深色版 →</a>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="swatch" href="index_v2_light.html" style="border-color:var(--brand);color:var(--text)">繁</a>
+        <a class="swatch" href="index_sc.html">简</a>
+        <a class="swatch" href="index_en.html">EN</a>
+        <a class="swatch" href="index.html">深色 →</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -162,7 +199,7 @@
         <div class="reveal">
           <div class="tag">純 AI 室內定位 ‧ 免專屬硬體</div>
           <h1><span class="nb">室內，也能像 GPS 一樣</span><br><span class="nb">知道你在幾樓、哪個位置</span></h1>
-          <p class="lead">人們有 80% 的時間在室內，但 GPS 進不了室內。<b style="color:var(--text)">wayio</b> 的核心產品 <b style="color:var(--text)">omcor</b> 是一套純軟體的室內定位引擎——沿用場域既有網路訊號，免佈建專屬硬體，當天即可上線。</p>
+          <p class="lead">人有八成時間待在室內，但 GPS 一進室內就失靈。<b style="color:var(--text)">wayio</b> 的核心產品 <b style="color:var(--text)">omcor</b> 是一套純軟體的室內定位引擎，直接沿用場域既有的網路訊號，不必另外佈建硬體，當天就能上線。</p>
           <div class="cta">
             <a class="btn" href="#contact">預約場域評估</a>
             <a class="btn ghost" href="#value">看商業價值</a>
@@ -241,7 +278,7 @@
       <div class="grid g-3" style="margin-top:34px">
         <div class="card reveal"><div class="ico">🏢</div><h3>wayio（品牌）</h3><p>聚焦室內定位這一個核心難題的 AI 團隊，以單一引擎跨場域落地，目標成為室內定位的基礎設施。</p></div>
         <div class="card reveal"><div class="ico">🧭</div><h3>omcor（產品）</h3><p>純 AI 室內定位引擎：沿用場域既有網路訊號，免佈建專屬硬體，直接輸出位置與樓層。</p></div>
-        <div class="card reveal"><div class="ico">🎯</div><h3>一句話定位</h3><p>「室內版的 GPS」——把昂貴、緩慢的室內定位，變成軟體當天就能上線的服務。</p></div>
+        <div class="card reveal"><div class="ico">🎯</div><h3>一句話定位</h3><p>「室內版的 GPS」。把原本昂貴又緩慢的室內定位，變成一套軟體當天就能上線的服務。</p></div>
       </div>
     </div>
   </section>
@@ -266,7 +303,7 @@
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">How it works</div>
       <h2>一顆 AI 核心，沿用既有訊號</h2>
-      <p class="sub">omcor 以 AI 模型融合場域中既有的訊號來源，直接輸出位置與樓層——不需要為定位另外佈建一整套硬體。多數場館本就已有覆蓋，只需在少數訊號稀疏處補強既有網路。</p>
+      <p class="sub">omcor 用 AI 模型整合場域裡既有的各種訊號，直接算出位置與樓層，不必為了定位再拉一整套硬體。多數場館本來就有訊號覆蓋，只要在少數收訊較弱的角落補強既有網路就好。</p>
       <div class="pill-row">
         <span class="pill">📱 手機</span><span class="pill">📶 Wi-Fi</span><span class="pill">🗼 5G</span>
         <span class="pill">🔵 藍牙</span><span class="pill">📡 UWB</span><span class="pill">→ 經緯度 ＋ 樓層</span>
@@ -285,9 +322,9 @@
     <div class="wrap">
       <div class="reveal"><div class="eyebrow">Market ‧ Why now</div>
       <h2>為什麼是現在</h2>
-      <p class="sub">人們約 80% 的時間在室內，室內定位卻長期被硬體成本與施工門檻卡住。AI 讓「不靠專屬硬體也能定位」成為可能——把過去百萬級、數月期的工程，變成軟體服務，市場才真正打得開。</p></div>
+      <p class="sub">人有大約八成時間待在室內，室內定位卻一直被硬體成本和施工門檻擋住。AI 讓「不靠專屬硬體也能定位」成真，把過去動輒百萬、要做好幾個月的工程，變成一套軟體服務，市場這才真正打得開。</p></div>
       <div class="grid g-3" style="margin-top:34px">
-        <div class="card reveal"><div class="ico">📈</div><h3>需求遍布各行業</h3><p>機場、醫院、製造、零售、校園——只要有「人與物在室內移動」，就有定位需求，場景橫跨多個產業。</p></div>
+        <div class="card reveal"><div class="ico">📈</div><h3>需求遍布各行業</h3><p>機場、醫院、製造、零售、校園，只要有人和物在室內移動，就有定位需求，橫跨許多產業。</p></div>
         <div class="card reveal"><div class="ico">⚙️</div><h3>純軟體 ＝ 可規模化</h3><p>不綁專屬硬體，同一套引擎跨場域複製；邊際成本低、導入快，具備規模化與重複營收的結構。</p></div>
         <div class="card reveal"><div class="ico">🚀</div><h3>時機成熟</h3><p>場域既有的 Wi-Fi／5G／藍牙覆蓋已普及、AI 模型成熟，正是用軟體取代硬體佈建的拐點。</p></div>
       </div>
@@ -427,7 +464,7 @@
           <input type="email" placeholder="Email" required />
           <textarea rows="4" placeholder="想了解的場域類型或需求（機場／醫院／園區／校園……）"></textarea>
           <button class="btn" type="submit">送出</button>
-          <div id="ok" style="display:none;color:var(--brand-2)">已收到（示意）——正式版請串接表單服務或公司信箱。</div>
+          <div id="ok" style="display:none;color:var(--brand-2)">已收到（示意）。正式版請接上表單服務或公司信箱。</div>
         </form>
       </div>
     </div>
